@@ -1,0 +1,247 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========================================================
+   1. ATURAN DASAR MODE CERAH (LIGHT MODE) - KANVAS STITCH
+   ======================================================== */
+:root {
+  --color-surface: #f6f8fc;
+  --color-surface-dim: #edf2f7;
+  --color-surface-bright: #ffffff;
+  --color-surface-variant: #e2e8f0;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f8fafc;
+  --color-surface-container: #ffffff;
+  --color-surface-container-high: #f1f5f9;
+  --color-surface-container-highest: #e2e8f0;
+
+  --color-primary: #008774;
+  --color-primary-container: #0d9488;
+  --color-primary-fixed: #006b5f;
+  --color-on-primary: #ffffff;
+
+  --color-secondary: #4d7c0f;
+  --color-secondary-container: #65a30d;
+  --color-secondary-fixed: #365314;
+  --color-on-secondary: #ffffff;
+
+  --color-tertiary: #0284c7;
+  --color-tertiary-container: #e0f2fe;
+  --color-on-tertiary: #ffffff;
+
+  --color-on-surface: #0f172a;
+  --color-on-surface-variant: #64748b;
+  --color-outline: #cbd5e1;
+  --color-outline-variant: #e2e8f0;
+
+  --color-error: #dc2626;
+  --color-error-container: #fee2e2;
+}
+
+/* ========================================================
+   2. ATURAN DASAR MODE GELAP (DARK MODE) - KANVAS STITCH
+   ======================================================== */
+html.dark {
+  --color-surface: #0c1321;
+  --color-surface-dim: #0c1321;
+  --color-surface-bright: #323949;
+  --color-surface-variant: #2e3544;
+  --color-surface-container-lowest: #070e1c;
+  --color-surface-container-low: #151b2a;
+  --color-surface-container: #19202e;
+  --color-surface-container-high: #232a39;
+  --color-surface-container-highest: #2e3544;
+
+  --color-primary: #57f1db;
+  --color-primary-container: #2dd4bf;
+  --color-primary-fixed: #62fae3;
+  --color-on-primary: #003731;
+
+  --color-secondary: #9ddf2e;
+  --color-secondary-container: #83c300;
+  --color-secondary-fixed: #b2f746;
+  --color-on-secondary: #213600;
+
+  --color-tertiary: #afe0ff;
+  --color-tertiary-container: #5ec9ff;
+  --color-on-tertiary: #00354a;
+
+  --color-on-surface: #dce2f6;
+  --color-on-surface-variant: #bacac5;
+  --color-outline: #859490;
+  --color-outline-variant: #3c4a46;
+
+  --color-error: #ffb4ab;
+  --color-error-container: #93000a;
+}
+
+/* ========================================================
+   3. SINKRONISASI MUTLAK: MODE CERAH (:root:not(.dark))
+   ======================================================== */
+:root:not(.dark) body,
+:root:not(.dark) .min-h-screen,
+:root:not(.dark) .bg-surface {
+  background-color: #f6f8fc !important;
+  color: #0f172a !important;
+}
+
+/* Header Atas Cerah */
+:root:not(.dark) header {
+  background-color: rgba(255, 255, 255, 0.92) !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+}
+:root:not(.dark) header h1 {
+  color: #0f172a !important;
+}
+:root:not(.dark) header span.text-primary {
+  color: #008774 !important;
+}
+:root:not(.dark) header button {
+  color: #475569 !important;
+}
+
+/* Seluruh Teks Utama & Keterangan */
+:root:not(.dark) .text-on-surface {
+  color: #0f172a !important;
+}
+:root:not(.dark) .text-on-surface-variant {
+  color: #64748b !important;
+}
+
+/* Seluruh Kartu Bento Utama */
+:root:not(.dark) .bg-surface-container,
+:root:not(.dark) .bg-surface-container-low {
+  background-color: #ffffff !important;
+  border: 1px solid #e5e9f2 !important;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05) !important;
+}
+
+/* Sub-kotak di dalam kartu (Legend, Baris Makan, Statistik) */
+:root:not(.dark) .bg-surface-container-high,
+:root:not(.dark) .bg-surface-container-highest,
+:root:not(.dark) [class*="bg-surface-container-high/"],
+:root:not(.dark) [class*="bg-surface-container-low/"],
+:root:not(.dark) [class*="bg-surface-container/"] {
+  background-color: #f8fafc !important;
+  border-color: #edf2f7 !important;
+}
+
+/* Jalur Lingkaran Ring SVG saat Cerah */
+:root:not(.dark) circle.text-surface-container-highest\/40 {
+  stroke: #e2e8f0 !important;
+}
+
+/* Tombol Aksi Utama -> Solid Teal Elegan + Teks Putih */
+:root:not(.dark) button[class*="from-primary-container"],
+:root:not(.dark) button[class*="from-primary"],
+:root:not(.dark) button.bg-secondary,
+:root:not(.dark) a[class*="from-primary-container"] {
+  background: linear-gradient(135deg, #008774 0%, #0d9488 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(0, 135, 116, 0.25) !important;
+}
+:root:not(.dark) button[class*="from-primary-container"] span,
+:root:not(.dark) button.bg-secondary span,
+:root:not(.dark) a[class*="from-primary-container"] span {
+  color: #ffffff !important;
+}
+
+/* Tombol Sekunder ("Impor GPX", "Tunda 15m") */
+:root:not(.dark) button.bg-surface-container,
+:root:not(.dark) button.bg-surface-container-high,
+:root:not(.dark) a.bg-surface-container {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+/* Navigasi Bawah Dock Kapsul Melayang */
+:root:not(.dark) nav {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 16px 36px -10px rgba(15, 23, 42, 0.12) !important;
+}
+:root:not(.dark) nav button {
+  color: #64748b !important;
+}
+:root:not(.dark) nav button span {
+  color: #64748b !important;
+}
+:root:not(.dark) nav button[class*="from-primary-container"] {
+  background: linear-gradient(135deg, #008774 0%, #0d9488 100%) !important;
+  box-shadow: 0 4px 16px rgba(0, 135, 116, 0.3) !important;
+}
+:root:not(.dark) nav button[class*="from-primary-container"] span {
+  color: #ffffff !important;
+}
+
+/* ========================================================
+   4. SINKRONISASI MUTLAK: MODE GELAP (html.dark)
+   ======================================================== */
+html.dark body,
+html.dark .min-h-screen,
+html.dark .bg-surface {
+  background-color: #0c1321 !important;
+  color: #dce2f6 !important;
+}
+html.dark .bg-surface-container,
+html.dark .bg-surface-container-low {
+  background-color: #19202e !important;
+  border: 1px solid rgba(46, 53, 68, 0.4) !important;
+}
+html.dark .bg-surface-container-high,
+html.dark .bg-surface-container-highest {
+  background-color: #232a39 !important;
+}
+html.dark header {
+  background-color: rgba(12, 19, 33, 0.85) !important;
+  border-bottom: 1px solid rgba(46, 53, 68, 0.4) !important;
+}
+html.dark nav {
+  background-color: rgba(25, 32, 46, 0.9) !important;
+  border: 1px solid rgba(46, 53, 68, 0.6) !important;
+}
+
+/* ========================================================
+   5. FONT & MATERIAL SYMBOLS
+   ======================================================== */
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  overscroll-behavior-y: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined' !important;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga';
+}
+
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+.pt-safe {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

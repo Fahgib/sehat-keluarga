@@ -3,7 +3,7 @@ import { createClient } from '@supabase/supabase-js';
 // Mengambil konfigurasi dari file .env dengan nilai cadangan (fallback) yang valid
 const supabaseUrl =
   import.meta.env.VITE_SUPABASE_URL ||
-  'https://ixkmzoaiywjxipjasozi.supabase.co';
+  'https://lxkmzoaiywjxipjasozi.supabase.co';
 
 const supabaseAnonKey =
   import.meta.env.VITE_SUPABASE_ANON_KEY ||

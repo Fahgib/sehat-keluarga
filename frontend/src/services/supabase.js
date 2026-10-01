@@ -1,8 +1,13 @@
 import { createClient } from '@supabase/supabase-js';
 
-// Mengambil konfigurasi dari file .env
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || '';
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || '';
+// Mengambil konfigurasi dari file .env dengan nilai cadangan (fallback) yang valid
+const supabaseUrl =
+  import.meta.env.VITE_SUPABASE_URL ||
+  'https://ixkmzoaiywjxipjasozi.supabase.co';
+
+const supabaseAnonKey =
+  import.meta.env.VITE_SUPABASE_ANON_KEY ||
+  'sb_publishable_MBq7Peoz11aqMjDwt02V7Q_WenpZHsP';
 
 // Inisialisasi Supabase Client
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);
